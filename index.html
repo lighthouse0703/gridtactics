@@ -1617,6 +1617,7 @@
             if (currentAction === 'unload' && activeUnit) {
               if (unloadableCells.some(c => c.x === x && c.y === y)) {
                 actionRef.current = null; 
+                setReachableCells([]); setAttackableCells([]); setSupplyableCells([]);
                 const unitToUnload = activeUnit.boarded[unloadIndex];
                 const newUnloadedUnit = { ...unitToUnload, x, y, actionPoints: { move: 0, attack: 0 } };
                 
